@@ -44,7 +44,7 @@ Resources:
         - Key: Name
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-ec2" 
         - Key: yor_trace
-          Value: 595b9b79-bd1e-45fd-a297-d521ebdf15e7
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
@@ -59,6 +59,8 @@ Resources:
           Value: "2021-08-23 13:51:41"
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
+        - Key: yor_name
+          Value: EC2Instance
       UserData:
         Fn::Base64: |
           #!/bin/bash
@@ -86,7 +88,7 @@ Resources:
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
         - Key: yor_trace
-          Value: 838685b6-8fac-42eb-9cf4-008dd36216a1
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
@@ -99,6 +101,8 @@ Resources:
           Value: jonathan.jozwiak/nimrodkor
         - Key: git_last_modified_at
           Value: "2021-08-23 13:51:41"
+        - Key: yor_name
+          Value: WebHostStorage
 
   ### CFN Does not Support Volume Snapshot
   EBSAttachment:
@@ -142,9 +146,11 @@ Resources:
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
         - Key: yor_trace
-          Value: d4d72008-2b73-4635-9df6-8035c8850d66
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
+        - Key: yor_name
+          Value: WebNodeSG
   WebVPC:
     Type: AWS::EC2::VPC
     Properties:
@@ -153,7 +159,7 @@ Resources:
       EnableDnsHostnames: True
       Tags:
         - Key: Name
-          Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-vpc"
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
@@ -170,6 +176,8 @@ Resources:
           Value: jonathan.jozwiak@googlemail.com
         - Key: yor_trace
           Value: eeb90d09-d35e-440f-ac67-2f96e472b2e0
+        - Key: yor_name
+          Value: WebVPC
   WebSubnet:
     Type: AWS::EC2::Subnet
     Properties:
@@ -184,7 +192,7 @@ Resources:
         - Key: Name
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-subnet"
         - Key: yor_trace
-          Value: 4f6434ca-b2c2-4fe3-88fc-9ad969965958
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
@@ -199,6 +207,8 @@ Resources:
           Value: "2021-08-23 13:51:41"
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
+        - Key: yor_name
+          Value: WebSubnet
   WebSubnet2:
     Type: AWS::EC2::Subnet
     Properties:
@@ -219,7 +229,7 @@ Resources:
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
         - Key: yor_trace
-          Value: 68c27f34-7110-458d-98b3-b9a7307638dc
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
@@ -228,6 +238,8 @@ Resources:
           Value: cfngoat.yaml
         - Key: git_commit
           Value: 42153ba22c28f5c0bff388b24a6344137a5dfe26
+        - Key: yor_name
+          Value: WebSubnet2
   WebIGW:
     Type: AWS::EC2::InternetGateway
     Properties:
@@ -235,7 +247,7 @@ Resources:
         - Key: Name
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-igw"
         - Key: yor_trace
-          Value: 39d8202d-7126-40dd-afa0-4554eeadada4
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
@@ -250,6 +262,8 @@ Resources:
           Value: "2020-04-25 01:13:26"
         - Key: git_last_modified_by
           Value: jonathan.jozwiak@googlemail.com
+        - Key: yor_name
+          Value: WebIGW
   InternetGatewayAttachment:
     Type: AWS::EC2::VPCGatewayAttachment
     Properties:
@@ -271,13 +285,15 @@ Resources:
         - Key: git_last_modified_by
           Value: jonathan.jozwiak@googlemail.com
         - Key: yor_trace
-          Value: 0613f2a9-ccbb-4e77-839b-bc0a7681bd9c
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
           Value: cfngoat
         - Key: git_file
           Value: cfngoat.yaml
+        - Key: yor_name
+          Value: WebRTB
   WebDefaultPublicRoute:
     Type: AWS::EC2::Route
     DependsOn:
@@ -308,7 +324,7 @@ Resources:
         - Key: git_last_modified_by
           Value: jonathan.jozwiak@googlemail.com
         - Key: yor_trace
-          Value: ebfdc86d-55a5-4df1-88fd-2f3bc869549c
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
@@ -321,6 +337,8 @@ Resources:
           Value: jonathan.jozwiak
         - Key: git_last_modified_at
           Value: "2020-04-25 01:13:26"
+        - Key: yor_name
+          Value: WebENI
   VpcFlowLogs:
     Type: AWS::EC2::FlowLog
     Properties:
@@ -335,7 +353,7 @@ Resources:
         - Key: git_last_modified_by
           Value: jonathan.jozwiak@googlemail.com
         - Key: yor_trace
-          Value: 077d3a3d-66bc-4fe9-8839-b59a40785234
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
@@ -346,6 +364,8 @@ Resources:
           Value: b1681f3806db6656faf4107ceceb77e9364e59b7
         - Key: git_modifiers
           Value: jonathan.jozwiak
+        - Key: yor_name
+          Value: VpcFlowLogs
   FlowBucket:
     Type: AWS::S3::Bucket
     DeletionPolicy: Delete
@@ -355,7 +375,7 @@ Resources:
         - Key: Name
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-flowlogs"
         - Key: yor_trace
-          Value: a148a687-a031-4491-8fc9-6bb78fef0572
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
@@ -370,6 +390,8 @@ Resources:
           Value: "2021-08-23 13:51:41"
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
+        - Key: yor_name
+          Value: FlowBucket
 
   #############
   ###  IAM  ###
@@ -388,7 +410,7 @@ Resources:
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
         - Key: yor_trace
-          Value: 346804e2-5a21-4f1b-a8bf-f3c3fc9c7d15
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
@@ -399,6 +421,8 @@ Resources:
           Value: 42153ba22c28f5c0bff388b24a6344137a5dfe26
         - Key: git_modifiers
           Value: jonathan.jozwiak/nimrodkor
+        - Key: yor_name
+          Value: User
   AccessKey:
     Type: AWS::IAM::AccessKey
     Properties:
@@ -447,7 +471,7 @@ Resources:
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
         - Key: yor_trace
-          Value: bd68272a-4d3b-44e6-a2f0-ad783935c332
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
@@ -456,6 +480,8 @@ Resources:
           Value: cfngoat.yaml
         - Key: git_commit
           Value: 42153ba22c28f5c0bff388b24a6344137a5dfe26
+        - Key: yor_name
+          Value: LogsKey
   LogsKeyAlias:
     Type: AWS::KMS::Alias
     Properties:
@@ -492,7 +518,7 @@ Resources:
         - Key: Name
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-rds"
         - Key: Environment
-          Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}"
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
@@ -509,6 +535,8 @@ Resources:
           Value: nimrodkor@gmail.com
         - Key: yor_trace
           Value: ca176a04-46cc-411d-a062-222ae03835a8
+        - Key: yor_name
+          Value: DefaultDB
   DefaultDBOptionGroup:
     Type: AWS::RDS::OptionGroup
     Properties:
@@ -524,7 +552,7 @@ Resources:
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
         - Key: yor_trace
-          Value: 6d7cc8b8-ee12-4ad2-940c-324b6eeca646
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
@@ -537,6 +565,8 @@ Resources:
           Value: jonathan.jozwiak/nimrodkor
         - Key: git_last_modified_at
           Value: "2021-08-23 13:51:41"
+        - Key: yor_name
+          Value: DefaultDBOptionGroup
   DefaultDBParameterGroup:
     Type: AWS::RDS::DBParameterGroup
     Properties:
@@ -557,7 +587,7 @@ Resources:
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
         - Key: yor_trace
-          Value: 88c3fff0-8627-4e00-8e10-086c1651370a
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
@@ -566,6 +596,8 @@ Resources:
           Value: cfngoat.yaml
         - Key: git_commit
           Value: 42153ba22c28f5c0bff388b24a6344137a5dfe26
+        - Key: yor_name
+          Value: DefaultDBParameterGroup
   DefaultSubnetGroup:
     Type: AWS::RDS::DBSubnetGroup
     Properties:
@@ -590,11 +622,13 @@ Resources:
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
         - Key: yor_trace
-          Value: 3c0704d6-7b98-472d-a6b2-c3085cb87024
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
           Value: cfngoat
+        - Key: yor_name
+          Value: DefaultSubnetGroup
   DefaultSG:
     Type: AWS::EC2::SecurityGroup
     Properties:
@@ -610,7 +644,7 @@ Resources:
         - Key: Name
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-rds-sg"
         - Key: Environment
-          Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}"
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
@@ -627,6 +661,8 @@ Resources:
           Value: jonathan.jozwiak@googlemail.com
         - Key: yor_trace
           Value: 3d3b2421-0886-4ab8-88ec-e4bef646fdf6
+        - Key: yor_name
+          Value: DefaultSG
   EC2Profile:
     Type: AWS::IAM::InstanceProfile
     Properties:
@@ -665,11 +701,13 @@ Resources:
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
         - Key: yor_trace
-          Value: 47d128cd-8fec-4d80-a768-e5e4c133b61a
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
           Value: cfngoat
+        - Key: yor_name
+          Value: EC2Role
   EC2Policy:
     Type: AWS::IAM::Policy
     Properties:
@@ -714,11 +752,13 @@ Resources:
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
         - Key: yor_trace
-          Value: 35854694-8244-4717-8f50-146fbec15c61
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
           Value: cfngoat
+        - Key: yor_name
+          Value: DBAppInstance
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash
@@ -864,7 +904,7 @@ Resources:
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
         - Key: yor_trace
-          Value: 2c07712d-22f5-42be-946e-1c2e71d2e275
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
@@ -875,6 +915,8 @@ Resources:
           Value: 42153ba22c28f5c0bff388b24a6344137a5dfe26
         - Key: git_modifiers
           Value: jonathan.jozwiak/nimrodkor
+        - Key: yor_name
+          Value: IAM4Lambda
   AnalysisLambda:
     Type: AWS::Lambda::Function
     Properties:
@@ -897,7 +939,7 @@ Resources:
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
         - Key: yor_trace
-          Value: 5939cdf9-4e86-4208-80d1-095c367c2c13
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
@@ -910,6 +952,8 @@ Resources:
           Value: jonathan.jozwiak/nimrodkor
         - Key: git_last_modified_at
           Value: "2021-08-23 13:51:41"
+        - Key: yor_name
+          Value: AnalysisLambda
 
   ############
   ###  S3  ###
@@ -937,9 +981,11 @@ Resources:
         - Key: git_last_modified_by
           Value: jonathan.jozwiak@googlemail.com
         - Key: yor_trace
-          Value: 509b197d-4f87-4ae1-aa43-8cca13c9e92e
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
+        - Key: yor_name
+          Value: DataBucket
 
   ### TODO - Custom Upload of insecure document
   FinancialsBucket:
@@ -963,11 +1009,13 @@ Resources:
         - Key: git_last_modified_by
           Value: jonathan.jozwiak@googlemail.com
         - Key: yor_trace
-          Value: 7d0b70d4-58fb-4d2d-b966-177d349932da
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
           Value: cfngoat
+        - Key: yor_name
+          Value: FinancialsBucket
   OperationsBucket:
     # not encrypted, no access logs
     Type: AWS::S3::Bucket
@@ -979,7 +1027,7 @@ Resources:
         Status: Enabled
       Tags:
         - Key: Name
-          Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-operations"
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
@@ -996,6 +1044,8 @@ Resources:
           Value: jonathan.jozwiak@googlemail.com
         - Key: yor_trace
           Value: 9e00e7c2-b27c-4141-af5a-2d90c9632a23
+        - Key: yor_name
+          Value: OperationsBucket
   DataScienceBucket:
     # not encrypted
     Type: AWS::S3::Bucket
@@ -1024,9 +1074,11 @@ Resources:
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
         - Key: yor_trace
-          Value: 11266986-850e-41eb-b980-7b4d8d49f919
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
+        - Key: yor_name
+          Value: DataScienceBucket
   LogsBucket:
     # not encrypted
     Type: AWS::S3::Bucket
@@ -1045,7 +1097,7 @@ Resources:
         - Key: Name
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-logs"
         - Key: yor_trace
-          Value: 7c5f90f1-7102-45dc-bead-02754df64eba
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
@@ -1060,6 +1112,8 @@ Resources:
           Value: "2021-08-23 13:51:41"
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
+        - Key: yor_name
+          Value: LogsBucket
 
    ########################
    ### Clean S3 Buckets ###
@@ -1107,11 +1161,13 @@ Resources:
         - Key: git_last_modified_by
           Value: jonathan.jozwiak@googlemail.com
         - Key: yor_trace
-          Value: 573995a2-e3f4-43a6-847d-df474b0fc71a
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
           Value: cfngoat
+        - Key: yor_name
+          Value: CleanupRole
   CleanBucketFunction:
     Type: "AWS::Lambda::Function"
     DependsOn:
@@ -1259,13 +1315,15 @@ Resources:
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
         - Key: yor_trace
-          Value: 75847e0e-ba4e-46e5-8c36-cd934d666acd
+          Value: naveednawazkhan
         - Key: git_org
           Value: bridgecrewio
         - Key: git_repo
           Value: cfngoat
         - Key: git_file
           Value: cfngoat.yaml
+        - Key: yor_name
+          Value: CleanBucketFunction
   CleanFlowBucketOnDelete:
     Type: Custom::cleanupflowbucket
     Properties:
