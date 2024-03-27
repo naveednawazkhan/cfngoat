@@ -98,6 +98,20 @@ Resources:
           Value: c4e86b57-aa6a-4ff4-bef0-35905cc87db7
         - Key: yor_name
           Value: InternetGateway
+        - Key: git_file
+          Value: eks.yaml
+        - Key: git_commit
+          Value: e2db5cea53d1e46ddaadda7ceb73d9ee084cc214
+        - Key: git_repo
+          Value: cfngoat
+        - Key: git_org
+          Value: naveednawazkhan
+        - Key: git_modifiers
+          Value: mike/nimrodkor
+        - Key: git_last_modified_by
+          Value: nimrodkor@gmail.com
+        - Key: git_last_modified_at
+          Value: "2021-08-23 08:03:36"
   VPCGatewayAttachment:
     Type: "AWS::EC2::VPCGatewayAttachment"
     Properties:
